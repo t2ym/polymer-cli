@@ -21,7 +21,7 @@ import {globalArguments} from '../args';
 
 import {Command, CommandOptions} from './command';
 
-let logger = logging.getLogger('cli.command.help');
+const logger = logging.getLogger('cli.command.help');
 
 const b = chalk.blue;
 const m = chalk.magenta;
@@ -30,15 +30,14 @@ const CLI_DESCRIPTION = 'The multi-tool for Polymer projects';
 const CLI_USAGE = 'Usage: \`polymer <command> [options ...]\`';
 
 // clang-format off - keep the custom white space here to help readibility
-const HELP_HEADER = '\n' +
-  b('   /\\˜˜/   ') + m('/\\˜˜/') + b('\\   ') + '\n' +
-  b('  /__\\/   ') + m('/__\\/') + b('__\\  ') + '  ' + CLI_TITLE + '\n' +
-  b(' /\\  /   ') + m('/\\  /') + b('\\  /\\ ') + '\n' +
-  b('/__\\/   ') + m('/__\\/  ') + b('\\/__\\') + '  ' + CLI_DESCRIPTION + '\n' +
-  b('\\  /\\  ') + m('/\\  /   ') + b('/\\  /') + '\n' +
-  b(' \\/__\\') + m('/__\\/   ') + b('/__\\/ ') + '  ' + CLI_USAGE + '\n' +
-  b('  \\  ') + m('/\\  /   ') + b('/\\  /  ') + '\n' +
-  b('   \\') + m('/__\\/   ') + b('/__\\/   ') + '\n';
+const HELP_HEADER = '\n' + b('   /\\˜˜/   ') + m('/\\˜˜/') + b('\\   ') + '\n' +
+    b('  /__\\/   ') + m('/__\\/') + b('__\\  ') + '  ' + CLI_TITLE + '\n' +
+    b(' /\\  /   ') + m('/\\  /') + b('\\  /\\ ') + '\n' + b('/__\\/   ') +
+    m('/__\\/  ') + b('\\/__\\') + '  ' + CLI_DESCRIPTION + '\n' +
+    b('\\  /\\  ') + m('/\\  /   ') + b('/\\  /') + '\n' + b(' \\/__\\') +
+    m('/__\\/   ') + b('/__\\/ ') + '  ' + CLI_USAGE + '\n' + b('  \\  ') +
+    m('/\\  /   ') + b('/\\  /  ') + '\n' + b('   \\') + m('/__\\/   ') +
+    b('/__\\/   ') + '\n';
 // clang-format on
 
 export class HelpCommand implements Command {
@@ -101,7 +100,7 @@ export class HelpCommand implements Command {
         return;
       }
 
-      let command = this.commands.get(commandName);
+      const command = this.commands.get(commandName);
       if (!command) {
         logger.error(`'${commandName}' is not an available command.`);
         console.log(this.generateGeneralUsage());

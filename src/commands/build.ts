@@ -20,7 +20,7 @@ import {ProjectBuildOptions, ProjectConfig} from 'polymer-project-config';
 
 import {Command, CommandOptions} from './command';
 
-let logger = logging.getLogger('cli.command.build');
+const logger = logging.getLogger('cli.command.build');
 
 
 export class BuildCommand implements Command {

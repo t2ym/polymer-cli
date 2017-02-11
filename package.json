@@ -14,7 +14,7 @@
     "build": "gulp build",
     "test": "gulp lint test",
     "prepublish": "npm run build && npm test",
-    "format": "find src test | grep '\\.js$\\|\\.ts$' | xargs clang-format --style=file -i"
+    "format": "find src test | grep '\\.js$\\|\\.ts$' | xargs clang-format --style=file -i && tslint --fix -c ./tslint.json src/*.ts src/**/*.ts src/**/**/*.ts"
   },
   "repository": {
     "type": "git",
@@ -82,6 +82,7 @@
     "yeoman-generator": "^1.0.1"
   },
   "devDependencies": {
+    "@polymer/tools-common": "^1.0.1",
     "chai": "^3.5.0",
     "clang-format": "=1.0.45",
     "depcheck": "^0.6.3",

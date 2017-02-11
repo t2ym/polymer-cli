@@ -26,7 +26,7 @@ import {Transform} from 'stream';
 // or consider writing a custom declaration in the `custom_typings/` folder.
 import File = require('vinyl');
 
-let logger = logging.getLogger('cli.build.prefech');
+const logger = logging.getLogger('cli.build.prefech');
 
 export class PrefetchTransform extends Transform {
   config: ProjectConfig;
@@ -114,7 +114,7 @@ export class PrefetchTransform extends Transform {
         this.fileMap.delete(importUrl);
       }
 
-      for (let leftover of this.fileMap.keys()) {
+      for (const leftover of this.fileMap.keys()) {
         logger.warn(
             'File was listed in fragments but not found in stream:', leftover);
         this.push(this.fileMap.get(leftover));

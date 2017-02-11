@@ -93,7 +93,7 @@ export class LintCommand implements Command {
       logger.warn(
           'No inputs specified. Please use the --input, --entrypoint, ' +
           '--shell or --fragment flags');
-      let argsCli = commandLineArgs(this.args);
+      const argsCli = commandLineArgs(this.args);
       console.info(argsCli.getUsage({
         title: `polymer ${this.name}`,
         description: this.description,
