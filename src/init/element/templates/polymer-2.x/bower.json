@@ -9,7 +9,7 @@
   "devDependencies": {
     "iron-component-page": "PolymerElements/iron-component-page#2.0-preview",
     "iron-demo-helpers": "PolymerElements/iron-demo-helpers#2.0-preview",
-    "web-component-tester": "v6.0.0-prerelease.5",
+    "web-component-tester": "t2ym/web-component-tester#wct6-plugin",
     "webcomponentsjs": "webcomponents/webcomponentsjs#v1"
   }
 }
