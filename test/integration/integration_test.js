@@ -35,49 +35,49 @@ suite('integration tests', function() {
   suite('init templates', () => {
 
     // TODO(#562): enable test commands.
-    test('test the polymer 1.x application template', () => {
+    test('test the Polymer 1.x application template', () => {
       let dir;
       return runGenerator(createApplicationGenerator('polymer-1.x'))
         .withPrompts({ name: 'my-app' }) // Mock the prompt answers
         .toPromise()
         .then((_dir) => { dir = _dir })
         .then(() => runCommand(binPath, ['install'], {cwd: dir}))
-        .then(() => runCommand(binPath, ['experimental-lint'], {cwd: dir}))
+        .then(() => runCommand(binPath, ['lint'], {cwd: dir}))
         // .then(() => runCommand(binPath, ['test'], {cwd: dir}))
         .then(() => runCommand(binPath, ['build'], {cwd: dir}));
     });
 
-    test('test the polymer 2.x application template', () => {
+    test('test the Polymer 2.x application template', () => {
       let dir;
       return runGenerator(createApplicationGenerator('polymer-2.x'))
         .withPrompts({ name: 'my-app' }) // Mock the prompt answers
         .toPromise()
         .then((_dir) => { dir = _dir })
         .then(() => runCommand(binPath, ['install'], { cwd: dir }))
-        .then(() => runCommand(binPath, ['experimental-lint'], {cwd: dir}))
+        .then(() => runCommand(binPath, ['lint'], {cwd: dir}))
         // .then(() => runCommand(binPath, ['test'], {cwd: dir}))
         .then(() => runCommand(binPath, ['build'], {cwd: dir}));
     });
 
-    test('test the polymer 2.x "element" template', () => {
+    test('test the Polymer 2.x "element" template', () => {
       let dir;
       return runGenerator(createElementGenerator('polymer-2.x'))
         .withPrompts({ name: 'my-element' }) // Mock the prompt answers
         .toPromise()
         .then((_dir) => { dir = _dir })
         .then(() => runCommand(binPath, ['install'], { cwd: dir }))
-        .then(() => runCommand(binPath, ['experimental-lint'], {cwd: dir}))
+        .then(() => runCommand(binPath, ['lint'], {cwd: dir}))
         // .then(() => runCommand(binPath, ['test'], {cwd: dir}));
     });
 
-    test('test the polymer 1.x "element" template', () => {
+    test('test the Polymer 1.x "element" template', () => {
       let dir;
       return runGenerator(createElementGenerator('polymer-1.x'))
         .withPrompts({ name: 'my-element' }) // Mock the prompt answers
         .toPromise()
         .then((_dir) => { dir = _dir })
         .then(() => runCommand(binPath, ['install'], { cwd: dir }))
-        .then(() => runCommand(binPath, ['experimental-lint'], {cwd: dir}))
+        .then(() => runCommand(binPath, ['lint'], {cwd: dir}))
         // .then(() => runCommand(binPath, ['test'], {cwd: dir}));
     });
 
@@ -92,19 +92,24 @@ suite('integration tests', function() {
       return runGenerator(ShopGenerator)
         .toPromise()
         .then((_dir) => { dir = _dir })
-        .then(() => runCommand(binPath, ['install'], {cwd: dir}))
-        .then(() => runCommand(
-          binPath, ['experimental-lint', '--rules=polymer-2-hybrid'],
-          {cwd: dir}))
+        .then(() => runCommand(binPath, ['install'], { cwd: dir }))
+        // See: https://github.com/Polymer/shop/pull/114
+        // .then(() => runCommand(
+        //   binPath, ['lint', '--rules=polymer-2-hybrid'],
+        //   {cwd: dir}))
         // .then(() => runCommand(binPath, ['test'], {cwd: dir}))
         .then(() => runCommand(binPath, ['build'], {cwd: dir}));
     });
 
-    test('test the "starter-kit" template', () => {
+    // TODO(justinfagnani): consider removing these integration tests
+    // or checking in the contents so that we're not subject to the
+    // other repo changing
+    test.skip('test the Polymer 1.x "starter-kit" template', () => {
       let dir;
       const PSKGenerator = createGithubGenerator({
         owner: 'PolymerElements',
         repo: 'polymer-starter-kit',
+        semverRange: '^2.0.0',
         githubToken,
       });
 
@@ -113,15 +118,42 @@ suite('integration tests', function() {
         .then((_dir) => { dir = _dir })
         .then(() => runCommand(binPath, ['install'], { cwd: dir }))
         .then(() => runCommand(
-            binPath, ['experimental-lint', '--rules=polymer-2-hybrid'],
+            binPath, ['lint', '--rules=polymer-2-hybrid'],
             { cwd: dir }))
         // .then(() => runCommand(binPath, ['test'], {cwd: dir}))
         .then(() => runCommand(binPath, ['build'], {cwd: dir}));
     });
 
+    // TODO(justinfagnani): consider removing these integration tests
+    // or checking in the contents so that we're not subject to the
+    // other repo changing
+    test.skip('test the Polymer 2.x "starter-kit" template', () => {
+      let dir;
+      const PSKGenerator = createGithubGenerator({
+        owner: 'PolymerElements',
+        repo: 'polymer-starter-kit',
+        semverRange: '^3.0.0',
+        githubToken,
+      });
+
+      return runGenerator(PSKGenerator)
+        .toPromise()
+        .then((_dir) => { dir = _dir })
+        .then(() => runCommand(binPath, ['install'], { cwd: dir }))
+        .then(() => runCommand(
+            binPath, ['lint', '--rules=polymer-2'],
+            { cwd: dir }))
+        // .then(() => runCommand(binPath, ['test'], {cwd: dir}))
+        .then(() => runCommand(binPath, ['build'], {cwd: dir}));
+    });
+
+
   });
 
-  suite('tools-sample-projects templates', () => {
+  // TODO(justinfagnani): consider removing these integration tests
+  // or checking in the contents so that we're not subject to the
+  // other repo changing
+  suite.skip('tools-sample-projects templates', () => {
 
     let tspDir;
 
@@ -141,7 +173,7 @@ suite('integration tests', function() {
       const dir = path.join(tspDir, 'polymer-1-app');
 
       return runCommand(binPath, ['install'], {cwd: dir})
-        .then(() => runCommand(binPath, ['experimental-lint'], {cwd: dir}))
+        .then(() => runCommand(binPath, ['lint'], {cwd: dir}))
         // .then(() => runCommand(binPath, ['test'], {cwd: dir}))
         .then(() => runCommand(binPath, ['build'], {cwd: dir}));
     });
@@ -150,7 +182,7 @@ suite('integration tests', function() {
       const dir = path.join(tspDir, 'polymer-2-app');
 
       return runCommand(binPath, ['install'], {cwd: dir})
-        .then(() => runCommand(binPath, ['experimental-lint'], {cwd: dir}))
+        .then(() => runCommand(binPath, ['lint'], {cwd: dir}))
         // .then(() => runCommand(binPath, ['test'], {cwd: dir}))
         .then(() => runCommand(binPath, ['build'], {cwd: dir}));
     });

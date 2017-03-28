@@ -13,6 +13,7 @@
  */
 
 import * as commandLineArgs from 'command-line-args';
+import {sep as pathSeperator} from 'path';
 import * as logging from 'plylog';
 import {ProjectConfig, ProjectOptions} from 'polymer-project-config';
 
@@ -23,7 +24,6 @@ import {Command} from './commands/command';
 import {HelpCommand} from './commands/help';
 import {InitCommand} from './commands/init';
 import {InstallCommand} from './commands/install';
-import {LintCommand as LegacyLintCommand} from './commands/legacy-lint';
 import {LintCommand} from './commands/lint';
 import {ServeCommand} from './commands/serve';
 import {TestCommand} from './commands/test';
@@ -103,13 +103,23 @@ export class PolymerCli {
       }
     }
 
+    // This is a quick fix to make sure that "webcomponentsjs" files are
+    // included in every build, since some are imported dynamically in a way
+    // that our analyzer cannot detect.
+    // TODO(fks) 03-07-2017: Remove/refactor when we have a better plan for
+    // support (either here or inside of polymer-project-config).
+    this.defaultConfigOptions = this.defaultConfigOptions || {};
+    this.defaultConfigOptions.extraDependencies =
+        this.defaultConfigOptions.extraDependencies || [];
+    this.defaultConfigOptions.extraDependencies.push(
+        `bower_components${pathSeperator}webcomponentsjs${pathSeperator}*.js`);
+
     this.addCommand(new AnalyzeCommand());
     this.addCommand(new BuildCommand());
     this.addCommand(new HelpCommand(this.commands));
     this.addCommand(new InitCommand());
     this.addCommand(new InstallCommand());
     this.addCommand(new LintCommand());
-    this.addCommand(new LegacyLintCommand());
     this.addCommand(new ServeCommand());
     this.addCommand(new TestCommand());
   }

@@ -14,8 +14,7 @@
     "build": "gulp build",
     "test": "gulp lint test && gulp test:integration",
     "test:smoke": "gulp test",
-    "format": "find src test | grep '\\.js$\\|\\.ts$' | xargs clang-format --style=file -i",
-    "prepublish": "npm test"
+    "format": "find src test | grep '\\.js$\\|\\.ts$' | xargs clang-format --style=file -i"
   },
   "repository": {
     "type": "git",
@@ -64,10 +63,9 @@
     "merge-stream": "^1.0.1",
     "parse5": "^2.2.3",
     "plylog": "^0.4.0",
-    "polylint": "^2.10.0",
-    "polymer-analyzer": "2.0.0-alpha.27",
-    "polymer-build": "^0.8.2",
-    "polymer-linter": "0.1.4",
+    "polymer-analyzer": "2.0.0-alpha.34",
+    "polymer-build": "0.9.1",
+    "polymer-linter": "1.0.1",
     "polymer-project-config": "^2.0.0",
     "polyserve": "https://github.com/t2ym/polyserve#0.16.0-istanbul.4",
     "request": "^2.72.0",
