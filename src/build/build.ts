@@ -24,7 +24,7 @@ import {ProjectConfig, ProjectBuildOptions} from 'polymer-project-config';
 import {PrefetchTransform} from './prefetch';
 import {waitFor, pipeStreams} from './streams';
 import {loadServiceWorkerConfig} from './load-config';
-import {UseES5WebcomponentsLoader} from './rewrite-webcomponents-loader';
+import {InjectES5Adapter} from './rewrite-webcomponents-loader';
 
 const logger = logging.getLogger('cli.build.build');
 export const mainBuildDirectoryName = 'build';
@@ -81,12 +81,16 @@ export async function build(
 
   const compiledToES5 = !!(optimizeOptions.js && optimizeOptions.js.compile);
   if (compiledToES5) {
-    buildStream = buildStream.pipe(new UseES5WebcomponentsLoader());
+    buildStream = buildStream.pipe(new InjectES5Adapter());
   }
 
   buildStream.once('data', () => {
     logger.info(`(${buildName}) Building...`);
   });
+
+  if (options.addPushManifest) {
+    buildStream = buildStream.pipe(polymerProject.addPushManifest());
+  }
 
   // Finish the build stream by piping it into the final build directory.
   buildStream = buildStream.pipe(dest(buildDirectory));
@@ -104,8 +108,6 @@ export async function build(
   // There is nothing left to do, so wait for the build stream to complete.
   await waitFor(buildStream);
 
-  // addServiceWorker() reads from the file system, so we need to wait for
-  // the build stream to finish writing to disk before calling it.
   if (options.addServiceWorker) {
     logger.debug(`Generating service worker...`);
     if (swConfig) {
