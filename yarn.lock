@@ -5306,9 +5306,9 @@ polymer-project-config@^2.0.0, polymer-project-config@^2.1.0:
     spdy "^3.3.3"
     ua-parser-js "^0.7.12"
 
-"polyserve@https://github.com/t2ym/polyserve#0.17.0-istanbul.1":
-  version "0.17.0-istanbul.1"
-  resolved "https://github.com/t2ym/polyserve#382d8bbeb9f2ec535123823677c4c967542cd191"
+"polyserve@https://github.com/t2ym/polyserve#0.17.0-istanbul.2":
+  version "0.17.0-istanbul.2"
+  resolved "https://github.com/t2ym/polyserve#16ca9ec736b65b1eb3f698084c3a286e51a80dec"
   dependencies:
     "@types/babel-core" "^6.7.14"
     "@types/content-type" "^1.0.33"
@@ -6509,8 +6509,6 @@ ternary-stream@^2.0.1:
 test-fixture@PolymerElements/test-fixture:
   version "3.0.0-rc.1"
   resolved "https://codeload.github.com/PolymerElements/test-fixture/tar.gz/26118ef0467501c33c02316e7016a2837baba10f"
-  dependencies:
-    web-component-tester "^6.0.0-prerelease.5"
 
 test-value@^2.1.0:
   version "2.1.0"
@@ -7105,7 +7103,7 @@ wd@^1.0.0:
 
 "web-component-tester@https://github.com/t2ym/web-component-tester#wct6-plugin":
   version "6.0.0-prerelease.8-wct6-plugin"
-  resolved "https://github.com/t2ym/web-component-tester#40b52fe8b674b022b05a0cdac7b6f00e9234da69"
+  resolved "https://github.com/t2ym/web-component-tester#7d1b955bddc9ef105266141a473f620ddedaf2fb"
   dependencies:
     "@types/body-parser" "0.0.33"
     "@types/chai" "^3.4.34"
@@ -7138,7 +7136,7 @@ wd@^1.0.0:
     mocha "^3.1.2"
     multer "^1.1.0"
     nomnom "^1.8.1"
-    polyserve "https://github.com/t2ym/polyserve#0.17.0-istanbul.1"
+    polyserve "https://github.com/t2ym/polyserve#0.17.0-istanbul.2"
     promisify-node "^0.4.0"
     resolve "^1.0.0"
     semver "^5.3.0"
