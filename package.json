@@ -1,6 +1,6 @@
 {
   "name": "polymer-cli",
-  "version": "0.18.0-wct6-plugin",
+  "version": "0.18.0-wct6-plugin.2",
   "description": "A commandline tool for Polymer projects",
   "main": "lib/polymer-cli.js",
   "engines": {
@@ -67,7 +67,7 @@
     "polymer-build": "1.1.0",
     "polymer-linter": "1.0.1",
     "polymer-project-config": "^2.1.0",
-    "polyserve": "https://github.com/t2ym/polyserve#0.16.0-istanbul.4",
+    "polyserve": "https://github.com/t2ym/polyserve#0.17.0-istanbul.3",
     "request": "^2.72.0",
     "resolve": "^1.1.7",
     "semver": "^5.3.0",
@@ -76,7 +76,7 @@
     "update-notifier": "^1.0.0",
     "vinyl": "^1.1.1",
     "vinyl-fs": "^2.4.3",
-    "web-component-tester": "https://github.com/t2ym/web-component-tester#wct6-plugin",
+    "web-component-tester": "https://github.com/t2ym/web-component-tester#6.0.0-prerelease.8-wct6-plugin.2",
     "yeoman-environment": "^1.5.2",
     "yeoman-generator": "^1.0.1"
   },
