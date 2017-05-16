@@ -1,10 +1,30 @@
 # Changelog
 
-## Unreleased
+<!-- ## Unreleased -->
+<!-- Add new, unreleased items here. -->
 
+## v0.18.4 [05-15-2017]
+- Updated dependencies to support official `polymer-analyzer` 2.0.0 and `web-components-tester` 6.0.0 releases.
+
+## v0.18.3 [05-12-2017]
+- Fix the CLI preset flag.
+- Fix an issue where compiling JS would crash in versions of node with native async iterators.
+- `bundle` no longer emits any JS or CSS files which have been inlined into bundles.
+
+## v0.18.2 [05-10-2017]
+
+- `build` Support build configuration "presets".
+- `build` Performance improvements, including reduction of extraneous insertions of html, head and body tags.
+- `bundle` has many bug fixes and support for lazy imports.
+- Update polyserve to 0.19.0 which adds HTTP compression and JS compilation for Mobile Safari and Vivaldi browsers.
+- Produce much smaller output when compiling many JS files to ES5 by inserting babel helpers only once, at the toplevel entrypoint.
+
+## v0.18.1 [04-25-2017]
+
+- `init` small template fixes.
 - `serve` now respects the `entrypoint` configured in `polymer.json`.
-- Update Node.js version pre-run check to match current Node.js version support.
-- Remove global command-line behavior to run a locally install version of the CLI if it existed in the current working directory. This unexpected behavior was never documented but some users could be running an incorrect version of the CLI as a result.
+- Remove ability to run a locally installed version of the CLI if it exists in the current working directory. This unexpected behavior was never documented but some users could be running an incorrect version of the CLI as a result.
+- Update Node.js version pre-run check to match latest supported versions.
 
 ## v0.18.0 [04-13-2017]
 
