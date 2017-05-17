@@ -53,8 +53,8 @@
     "@types/babel-types" "*"
 
 "@types/bluebird@*":
-  version "3.5.3"
-  resolved "https://registry.yarnpkg.com/@types/bluebird/-/bluebird-3.5.3.tgz#a2c28be02c0855f526e43785fa326f282402e290"
+  version "3.5.4"
+  resolved "https://registry.yarnpkg.com/@types/bluebird/-/bluebird-3.5.4.tgz#f120162b04fd6d55e10346d7e2e96eed462b02cf"
 
 "@types/body-parser@0.0.33":
   version "0.0.33"
@@ -242,6 +242,12 @@
   resolved "https://registry.yarnpkg.com/@types/mz/-/mz-0.0.29.tgz#bc24728c649973f1c7851e9033f9ce525668c27b"
   dependencies:
     "@types/bluebird" "*"
+    "@types/node" "*"
+
+"@types/mz@^0.0.31":
+  version "0.0.31"
+  resolved "https://registry.yarnpkg.com/@types/mz/-/mz-0.0.31.tgz#a4d80c082fefe71e40a7c0f07d1e6555bbbc7b52"
+  dependencies:
     "@types/node" "*"
 
 "@types/node@*", "@types/node@6.0.*", "@types/node@=6.0.65", "@types/node@^6", "@types/node@^6.0.0", "@types/node@^6.0.31", "@types/node@^6.0.41":
@@ -2356,11 +2362,7 @@ dom5@^2.0.0, dom5@^2.0.1, dom5@^2.1.0, dom5@^2.2.0, dom5@^2.3.0:
     clone "^2.1.0"
     parse5 "^2.2.2"
 
-domelementtype@1:
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/domelementtype/-/domelementtype-1.3.0.tgz#b17aed82e8ab59e52dd9c19b1756e0fc187204c2"
-
-domelementtype@~1.1.1:
+domelementtype@1, domelementtype@~1.1.1:
   version "1.1.3"
   resolved "https://registry.yarnpkg.com/domelementtype/-/domelementtype-1.1.3.tgz#bd28773e2642881aec51544924299c5cd822185b"
 
@@ -4232,8 +4234,8 @@ jsprim@^1.2.2:
     verror "1.3.6"
 
 kind-of@^3.0.2:
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/kind-of/-/kind-of-3.2.0.tgz#b58abe4d5c044ad33726a8c1525b48cf891bff07"
+  version "3.2.2"
+  resolved "https://registry.yarnpkg.com/kind-of/-/kind-of-3.2.2.tgz#31ea21a734bab9bbb0f32466d893aea51e4a3c64"
   dependencies:
     is-buffer "^1.1.5"
 
@@ -4829,7 +4831,7 @@ mute-stream@0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/mute-stream/-/mute-stream-0.0.6.tgz#48962b19e169fd1dfc240b3f1e7317627bbc47db"
 
-mz@^2.4.0:
+mz@^2.4.0, mz@^2.6.0:
   version "2.6.0"
   resolved "https://registry.yarnpkg.com/mz/-/mz-2.6.0.tgz#c8b8521d958df0a4f2768025db69c719ee4ef1ce"
   dependencies:
@@ -5349,9 +5351,9 @@ plylog@^0.5.0:
     "@types/winston" "^2.2.0"
     winston "^2.2.0"
 
-polymer-analyzer@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/polymer-analyzer/-/polymer-analyzer-2.0.0.tgz#70c3071e98ba2bd447885eaf987d23287dd8ef0c"
+polymer-analyzer@^2.0.0, polymer-analyzer@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/polymer-analyzer/-/polymer-analyzer-2.0.1.tgz#37d1556ab55814833677302f65c583960fa44232"
   dependencies:
     "@types/chai-subset" "^1.3.0"
     "@types/chalk" "^0.4.30"
@@ -5376,9 +5378,9 @@ polymer-analyzer@^2.0.0:
     strip-indent "^2.0.0"
     typescript "^2.2.0"
 
-polymer-build@^1.1.0, polymer-build@^1.2.5:
-  version "1.2.5"
-  resolved "https://registry.yarnpkg.com/polymer-build/-/polymer-build-1.2.5.tgz#0d238429582492250bba8171352b9d96535dc4a7"
+polymer-build@^1.1.0, polymer-build@^1.3.0:
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/polymer-build/-/polymer-build-1.3.1.tgz#3c5c685fb095ed9228c42eaf63188e10fc760b1a"
   dependencies:
     "@types/node" "^4.2.3"
     "@types/parse5" "^2.2.32"
@@ -5388,9 +5390,9 @@ polymer-build@^1.1.0, polymer-build@^1.2.5:
     multipipe "^1.0.2"
     parse5 "^2.2.2"
     plylog "^0.5.0"
-    polymer-analyzer "^2.0.0"
+    polymer-analyzer "^2.0.1"
     polymer-bundler "2.0.0-pre.18"
-    polymer-project-config "^2.0.0"
+    polymer-project-config "^3.0.0"
     sw-precache "^5.1.1"
     vinyl "^1.1.1"
     vinyl-fs "^2.4.3"
@@ -5427,18 +5429,9 @@ polymer-linter@^2.0.2:
     polymer-analyzer "^2.0.0"
     strip-indent "^2.0.0"
 
-polymer-project-config@^2.0.0:
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/polymer-project-config/-/polymer-project-config-2.1.1.tgz#cfda2fb2d1d443bc845cf7e6d9a6b78e2769e0ec"
-  dependencies:
-    "@types/node" "^6.0.41"
-    jsonschema "^1.1.1"
-    minimatch-all "^1.1.0"
-    plylog "^0.5.0"
-
-polymer-project-config@^3.0.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/polymer-project-config/-/polymer-project-config-3.1.0.tgz#5a7d87a55834c5841d1f0609b47df65e7e60dd9d"
+polymer-project-config@^3.0.0, polymer-project-config@^3.2.0:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/polymer-project-config/-/polymer-project-config-3.2.0.tgz#83ecc57dcc2cf3a740647475bb13404cf175ee16"
   dependencies:
     "@types/node" "^6.0.41"
     jsonschema "^1.1.1"
@@ -6378,8 +6371,8 @@ sshpk@^1.7.0:
     tweetnacl "~0.14.0"
 
 stack-trace@0.0.x:
-  version "0.0.9"
-  resolved "https://registry.yarnpkg.com/stack-trace/-/stack-trace-0.0.9.tgz#a8f6eaeca90674c333e7c43953f275b451510695"
+  version "0.0.10"
+  resolved "https://registry.yarnpkg.com/stack-trace/-/stack-trace-0.0.10.tgz#547c70b347e8d32b4e108ea1a2a159e5fdde19c0"
 
 stacky@^1.3.1:
   version "1.3.1"
@@ -6886,15 +6879,15 @@ ua-parser-js@^0.7.12:
   resolved "https://registry.yarnpkg.com/ua-parser-js/-/ua-parser-js-0.7.12.tgz#04c81a99bdd5dc52263ea29d24c6bf8d4818a4bb"
 
 uglify-js@3.0.x:
-  version "3.0.5"
-  resolved "https://registry.yarnpkg.com/uglify-js/-/uglify-js-3.0.5.tgz#585f5540a991edce566be734d235b71eed7e7146"
+  version "3.0.7"
+  resolved "https://registry.yarnpkg.com/uglify-js/-/uglify-js-3.0.7.tgz#5cca9c14abae2dd60ceccdf7da3c672cc8069cec"
   dependencies:
     commander "~2.9.0"
     source-map "~0.5.1"
 
 uglify-js@^2.4.10, uglify-js@^2.6:
-  version "2.8.25"
-  resolved "https://registry.yarnpkg.com/uglify-js/-/uglify-js-2.8.25.tgz#11b776e7c3925802853e4c3dd6d0ffad8eb72336"
+  version "2.8.26"
+  resolved "https://registry.yarnpkg.com/uglify-js/-/uglify-js-2.8.26.tgz#3a1db8ae0a0aba7f92e1ddadadbd0293d549f90e"
   dependencies:
     source-map "~0.5.1"
     yargs "~3.10.0"
