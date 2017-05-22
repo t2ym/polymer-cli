@@ -3,6 +3,13 @@
 <!-- ## Unreleased -->
 <!-- Add new, unreleased items here. -->
 
+## v1.0.2 [05-19-2017]
+- Updates dependencies on latest polymer-build and polymer-bundler to reduce extraneous html tag output when bundling and generating prefetch links.
+
+## v1.0.1 [05-18-2017]
+- Update element and application templates to latest stable versions
+- Prefetch links are now compatible with bundler and differential serving w/ base tag hrefs in entrypoint documents.
+
 ## v1.0.0 [05-16-2017]
 - Official 1.0.0 release of the Polymer CLI! 🎉
 - `build` Support for new `basePath` build config option that remaps paths to assist in serving at non-root paths, such as when doing differential serving of multiple builds from the same host. Affects service worker generation, push manifest generation, and also updates the entrypoint's `<base>` tag if found.

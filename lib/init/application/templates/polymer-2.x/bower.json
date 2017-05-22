@@ -4,13 +4,10 @@
 <% } -%>
   "main": "index.html",
   "dependencies": {
-    "polymer": "Polymer/polymer#^2.0.0-rc.5"
+    "polymer": "Polymer/polymer#^2.0.0"
   },
   "devDependencies": {
     "web-component-tester": "t2ym/web-component-tester#wct6-plugin",
-    "webcomponentsjs": "webcomponents/webcomponentsjs#^1.0.0-rc.7"
-  },
-  "resolutions": {
-    "polymer": "^2.0.0-rc.3"
+    "webcomponentsjs": "webcomponents/webcomponentsjs#^1.0.0"
   }
 }
