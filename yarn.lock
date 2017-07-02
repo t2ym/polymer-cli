@@ -7355,7 +7355,7 @@ wd@^1.0.0:
     underscore.string "3.3.4"
     vargs "0.1.0"
 
-web-component-tester@t2ym/web-component-tester#^6.0.0:
+web-component-tester@t2ym/web-component-tester#6.0.0:
   version "6.0.0"
   resolved "https://codeload.github.com/t2ym/web-component-tester/tar.gz/640c8dd8fc86afd3ce4948ccd20d84fffa2b4c5f"
   dependencies:
