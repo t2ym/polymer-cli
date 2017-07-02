@@ -1,7 +1,21 @@
 # Changelog
 
-<!-- ## Unreleased -->
+## Unreleased
 <!-- Add new, unreleased items here. -->
+
+## v1.3.0 [06-30-2017]
+- Added support for optional polymer-project-config provision of bundler options instead of only boolean value for the `bundle` property of build definitions.  See the [Polymer Project Config 3.4.0 release notes](https://github.com/Polymer/polymer-project-config/pull/37) for details on new options available in polymer.json.
+- Includes Polymer Build fixes to push-manifest generation and others.  See [Polymer Build 1.6.0 release notes](https://github.com/Polymer/polymer-build/pull/249).
+- Includes Polymer Bundler fixes to shell strategy and others.  See [Polymer Bundler 2.2.0 release notes](https://github.com/Polymer/polymer-bundler/pull/573).
+
+## v1.2.0 [06-12-2017]
+- Updated lint rule to `polymer-2` in the `polymer-2-element` template.
+- Drop 1.x init templates. Bump `shop` init template to latest version.
+
+## v1.1.0 [05-23-2017]
+- Updated dependency on latest polymer-project-config so that bundled presets include prefetch link generation.
+- `build` Entrypoints will now be properly cached by generated service workers, and assets will be fetched by service workers using relative URLs to support apps mounted at non-root host paths.
+- `build` The `basePath` option no longer adds a prefix to service workers or push manifests. Relative URLs are used instead.
 
 ## v1.0.2 [05-19-2017]
 - Updates dependencies on latest polymer-build and polymer-bundler to reduce extraneous html tag output when bundling and generating prefetch links.
@@ -30,6 +44,8 @@
 - `bundle` has many bug fixes and support for lazy imports.
 - Update polyserve to 0.19.0 which adds HTTP compression and JS compilation for Mobile Safari and Vivaldi browsers.
 - Produce much smaller output when compiling many JS files to ES5 by inserting babel helpers only once, at the toplevel entrypoint.
+
+- `init`: Propagate `description` from `init` to application templates in `index.html` meta tag.
 
 ## v0.18.1 [04-25-2017]
 
