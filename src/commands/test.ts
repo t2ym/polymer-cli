@@ -134,7 +134,7 @@ export class TestCommand implements Command {
 
   run(_options: CommandOptions, _config: ProjectConfig): Promise<void> {
     // Defer dependency loading until this specific command is run
-    const wct = require('web-component-tester') as typeof wctTypeOnly;
+    const wct = require('@t2ym/web-component-tester') as typeof wctTypeOnly;
 
     return wct.cli.run(process.env, process.argv.slice(3), process.stdout);
   }
