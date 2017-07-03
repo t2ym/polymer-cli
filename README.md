@@ -1,10 +1,12 @@
-[![Build Status](https://travis-ci.org/Polymer/polymer-cli.svg?branch=master)](https://travis-ci.org/Polymer/polymer-cli)
-[![Build status](https://ci.appveyor.com/api/projects/status/3xc7rkapu39rw9fs/branch/master?svg=true)](https://ci.appveyor.com/project/justinfagnani/polymer-cli/branch/master)
-[![NPM version](http://img.shields.io/npm/v/polymer-cli.svg)](https://www.npmjs.com/package/polymer-cli)
+[![NPM version](http://img.shields.io/npm/v/@t2ym/polymer-cli.svg)](https://www.npmjs.com/package/@t2ym/polymer-cli)
 
-# Polymer CLI
+# [Polymer CLI](https://github.com/Polymer/polymer-cli) fork with [@t2ym/web-component-tester](https://www.npmjs.com/package/@t2ym/web-component-tester) to use with [wct-istanbul](https://www.npmjs.com/package/wct-istanbul)
 
 The command-line tool for Polymer projects and Web Components.
+
+Functionally in parallel with [Polymer CLI 1.3.0](https://github.com/Polymer/polymer-cli/tree/v1.3.0).
+
+No functional changes from polymer-cli other than using @t2ym/web-component-tester instead of web-component-tester.
 
 ## Features
 
