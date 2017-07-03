@@ -1,7 +1,7 @@
 {
   "name": "@t2ym/polymer-cli",
-  "version": "1.3.2-pre.2",
-  "description": "A commandline tool for Polymer projects",
+  "version": "1.3.2-pre.3",
+  "description": "A fork of polymer-cli with @t2ym/web-component-tester to work with wct-istanbul",
   "main": "lib/polymer-cli.js",
   "engines": {
     "node": ">=6.0"
